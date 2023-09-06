@@ -8,6 +8,7 @@ export const Form = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const form = event.currentTarget
+
     const formData = new FormData(form)
     const {
       rut,
@@ -51,72 +52,91 @@ export const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='text-left min-w-[400px] p-8 space-y-8 border rounded border-white/10'>
+    <form onSubmit={handleSubmit} id='myForm' className='text-left min-w-[400px] p-8 space-y-8 border rounded border-white/10'>
+      <div className='flex flex-row'>
+        <Input
+          name='names'
+          id='names'
+          label='Nombre:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='lastNames'
+          id='lastNames'
+          label='Apellido:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='email'
+          id='email'
+          label='Tu Email:'
+          type='email'
+          placeholder='example@email.com'
+        />
 
-      <Input
-        name='names'
-        id='names'
-        label='Tu Nombre:'
-        type='text'
-        placeholder=''
+      </div>
+      <div className='flex flex-row m-2'>
+        <Input
+          name='phoneNumber'
+          id='phoneNumber'
+          label='Telefono:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='rut'
+          id='rut'
+          label='Rut:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='address'
+          id='address'
+          label='Dirección:'
+          type='text'
+          placeholder=''
+        />
+      </div>
+      <div className='flex flex-row m-2'>
+
+        <Input
+          name='city'
+          id='city'
+          label='Ciudad:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='birth'
+          id='birth'
+          label='Fecha de naciemiento:'
+          type='text'
+          placeholder=''
+        />
+        <Input
+          name='civilStatus'
+          id='civilStatus'
+          label='Estado civil:'
+          type='text'
+          placeholder=''
+        />
+      </div>
+      <textarea
+        className='border text-sm rounded-lg block w-full p-2.5 bg-white/5 border-gray-600 placeholder-gray-400 text-white'
+        name='comentario'
+        id='comentario'
+        placeholder='Deja tu comentario...'
       />
-      <Input
-        name='lastNames'
-        id='lastNames'
-        label='Tu Nombre:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='email'
-        id='email'
-        label='Tu Email:'
-        type='email'
-        placeholder='example@email.com'
-      />
-      <Input
-        name='phoneNumber'
-        id='phoneNumber'
-        label='Tu telefono:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='rut'
-        id='rut'
-        label='Rut:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='address'
-        id='address'
-        label='Direccion:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='city'
-        id='city'
-        label='ciudad:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='birth'
-        id='birth'
-        label='fecha de naciemiento:'
-        type='text'
-        placeholder=''
-      />
-      <Input
-        name='civilStatus'
-        id='civilStatus'
-        label='estado civil:'
-        type='text'
-        placeholder=''
-      />
-      <Button>Enviar mensaje</Button>
+      <div className='flex flex-row justify-items-center '>
+
+        <Button>Enviar mensaje</Button>
+        <Button>Limpiar
+        </Button>
+        <Button>Cerrar</Button>
+      </div>
     </form>
   )
 }
