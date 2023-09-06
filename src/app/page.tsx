@@ -1,6 +1,4 @@
 import { Form } from '@/components/Form'
-import { KVViewContacts } from '@/components/KVViewContacts'
-// import { Form } from '@/components/PostgreForm'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +11,6 @@ export default function Home () {
       <div className='flex flex-col max-w-2xl mx-auto text-center'>
         <Form />
 
-        <KVViewContacts />
       </div>
 
     </main>
