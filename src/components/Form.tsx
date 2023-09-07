@@ -22,7 +22,6 @@ export const Form = () => {
       civilStatus
     } = Object.fromEntries(formData.entries())
 
-    // a llamar a nuestra querida API
     fetch('/api/kv-send-message', {
       method: 'POST',
       body: JSON.stringify({
@@ -43,7 +42,6 @@ export const Form = () => {
       toast.success('Mensaje enviado con éxito')
       form.reset()
 
-      // es un poco hack, pero funciona!
       const $view = document.querySelector('#count-views')
       if ($view != null) $view.innerHTML = `${Number($view.textContent) + 1}`
     }).catch(() => {
@@ -77,7 +75,7 @@ export const Form = () => {
         />
 
       </div>
-      <div className='flex flex-row m-2'>
+      <div className='flex flex-row'>
         <Input
           name='phoneNumber'
           id='phoneNumber'
@@ -100,7 +98,7 @@ export const Form = () => {
           placeholder=''
         />
       </div>
-      <div className='flex flex-row m-2'>
+      <div className='flex flex-row'>
 
         <Input
           name='city'
@@ -133,9 +131,8 @@ export const Form = () => {
       <div className='flex flex-row justify-items-center '>
 
         <Button>Enviar mensaje</Button>
-        <Button>Limpiar
-        </Button>
-        <Button>Cerrar</Button>
+        <button type='reset' className='w-full px-5 py-3 text-sm font-medium text-center text-white border border-white rounded-full mx-1'>Limpiar</button>
+        <button type='button' className='w-full px-5 py-3 text-sm font-medium text-center text-white border border-white rounded-full mx-1'>Cerrar</button>
       </div>
     </form>
   )

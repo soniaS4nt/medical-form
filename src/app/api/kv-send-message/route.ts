@@ -21,7 +21,7 @@ export async function POST (request: Request) {
     return new Response('Invalid fields.', { status: 400 })
   } */
 
-  const uuid = crypto.randomUUID() // a generar una ID única
+  const uuid = crypto.randomUUID()
   const timestamp = Date.now()
 
   try {

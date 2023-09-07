@@ -9,7 +9,7 @@ export async function GET (request: Request) {
 
     return new Response(mess, { status: 200 })
   } catch (error) {
-    console.error(error) // capturar el console y enviarlo a un dashboard
+    console.error(error)
     return new Response('Internal error', { status: 500 })
   }
 }
